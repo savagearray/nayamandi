@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kisan Mandi</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/main.css') }}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+	<!-- Navbar starts -->
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0288d1;">
+  		<a class="navbar-brand" href="#">
+  			<img src="{{ url_for('static',filename='images/farmer_logo.jpg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+  			Naya Mandi
+  		</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNav">
+    		<ul class="navbar-nav">
+      			<li class="nav-item active">
+        			<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">Tab1</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">Tab2</a>
+      			</li>
+      			<li class="nav-item">
+        			<a class="nav-link" href="#">Tab3</a>
+      			</li>
+    		</ul>
+
+    		<ul class="navbar-nav ml-auto">
+    			<li class="nav-item">
+      				<a class="nav-link" href="#"><i class="fa fa-user-plus"></i>&nbsp;Registration</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link" href="#"><i class="fa fa-sign-in"></i>&nbsp;Login</a>
+    			</li>
+  			</ul>
+  		</div>
+	</nav>
+	<!-- Navbar ends -->
+
+	<!-- Vertical navbar starts -->
+	<div class="vertical-nav">
+		<div class="container">
+    		<h1>Access information about bidding</h1>
+  			<hr>
+  			<div class="row">
+    			<div class="col-md-2 mb-3">
+        			<ul class="nav nav-pills flex-column" id="myTab" role="tablist">
+  						<li class="nav-item">
+    						<a class="nav-link active" id="home-tab" href="/commodity" role="tab">Commodities</a>
+  						</li>
+  						<li class="nav-item">
+    						<a class="nav-link" id="profile-tab" href="/license" role="tab">State Unified License</a>
+  						</li>
+  						<li class="nav-item">
+    						<a class="nav-link" id="contact-tab" href="/price_details" role="tab">Price Details</a>
+  						</li>
+              			<li class="nav-item">
+                			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab">Incentives</a>
+              			</li>
+  						<li class="nav-item">
+    						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab">Success Stories</a>
+  						</li>
+					</ul>
+    			</div>
+  			</div>  
+		</div>
+	</div>
+	<!-- Vertical navbar ends -->
+
+	<div class="img-slide">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  			<ol class="carousel-indicators">
+    			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  			</ol>
+  			<div class="carousel-inner">
+    			<div class="carousel-item active">
+      				<img class="d-block w-100" src="{{ url_for('static',filename='images/slide_1.jpg') }}" height="500px" alt="First slide">
+      				<div class="carousel-caption d-none d-md-block">
+    					<h5>Caption 1</h5>
+    					<p>Description 1</p>
+  					</div>
+    			</div>
+    			<div class="carousel-item">
+      				<img class="d-block w-100" src="{{ url_for('static',filename='images/slide_2.jpg') }}" height="500px" alt="Second slide">
+      				<div class="carousel-caption d-none d-md-block">
+    					<h5>Caption 2</h5>
+    					<p>Description 2</p>
+  					</div>
+    			</div>
+    			<div class="carousel-item">
+      				<img class="d-block w-100" src="{{ url_for('static',filename='images/slide_3.jpg') }}" height="500px" alt="Third slide">
+      				<div class="carousel-caption d-none d-md-block">
+    					<h5>Caption 3</h5>
+    					<p>Description 3</p>
+  					</div>
+    			</div>
+  			</div>
+  			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    			<span class="sr-only">Previous</span>
+  			</a>
+  			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    			<span class="sr-only">Next</span>
+  			</a>
+		</div>
+	</div>
+
+	<!-- Marquee info starts-->
+	<div class="alert alert-danger alert-dismissible" style="background-color: #0288d1; border: none; color: #fff;">
+  		<marquee><p style="font-size: 18pt">Crop price information!</p></marquee>
+	</div>
+  <div class="alert alert-danger alert-dismissible" style="background-color: #0288d1; border: none; color: #fff;">
+      <marquee><p style="font-size: 18pt">Contact information and hindi!</p></marquee>
+  </div>
+	<!-- Marquee info ends-->
+
+	<!-- Video window info starts-->
+	<div class="video-container">
+		<div class="embed-responsive embed-responsive-21by9">
+  			<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="embed-responsive embed-responsive-21by9">
+  			<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="embed-responsive embed-responsive-21by9">
+  			<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	</div>
+	<!-- Video window info ends-->
+
+	<!-- Overview info starts-->
+	<div class="overview">
+		<div class="jumbotron" style="height: 410px;">
+  			<h1 class="display-4">Naya Mandi</h1>
+  			<p class="lead">This is a website where you can buy or sell without any worries!</p>
+  			<hr class="my-4">
+  			<h3 class="display-6">Our Vision</h3>
+  			<p>Input vision here...</p>
+  			<p class="lead">
+    			<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  			</p>
+		</div>
+	</div>
+	<!-- Overview info ends-->
+
+	<!-- Coverage info starts-->
+	<div class="coverage">
+		
+	</div>
+	<!-- Coverage info ends-->
+	
+
+	<!-- Footer starts -->
+	<footer class="section footer-classic context-dark bg-image" style="background: #0288d1; width: 100%;">
+        <div class="container">
+        	<div class="row row-30">
+            	<div class="col-md-4 col-xl-5">
+            		<div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                	<p>Description telling consumers who we are.</p>
+                	<!-- Rights-->
+                	<p class="rights"><span>©  </span><span class="copyright-year">2020</span><span> </span><span>NM</span><span>. </span><span>All Rights Reserved.</span></p>
+              	</div>
+            	</div>
+            	<div class="col-md-4">
+              		<h5>Contacts</h5>
+              		<dl class="contact-list">
+              			<dt>Address</dt>
+                		<dd>Address input</dd>
+              		</dl>
+              		<dl class="contact-list">
+                		<dt>Email</dt>
+                		<dd><a href="mailto:#">savagearray@gmail.com</a></dd>
+              		</dl>
+              		<dl class="contact-list">
+                		<dt>Phones</dt>
+                		<dd><a href="tel:#">+91 9999999999</a>
+                		</dd>
+              		</dl>
+            	</div>
+            	<div class="col-md-4 col-xl-3">
+              		<h5>Links</h5>
+              		<ul class="nav-list">
+                		<li><a href="#">About</a></li>
+                		<li><a href="#">Projects</a></li>
+                		<li><a href="#">Blog</a></li>
+                		<li><a href="#">Contacts</a></li>
+                		<li><a href="#">Pricing</a></li>
+              		</ul>
+            	</div>
+          	</div>
+        </div>
+        <div class="row no-gutters social-container">
+          	<div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+          	<div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+          	<div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+          	<div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+    	</div>
+    </footer>
+    <!-- Footer ends -->
+</body>
+</html>

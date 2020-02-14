@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Licenses</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+  <!-- Navbar starts -->
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0288d1;">
+  		<a class="navbar-brand" href="#">
+  			<img src="{{ url_for('static',filename='images/farmer_logo.jpg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+  			Naya Mandi
+  		</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+  		<div class="collapse navbar-collapse" id="navbarNav">
+    		<ul class="navbar-nav">
+      			<li class="nav-item active">
+        			<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      			</li>
+    		</ul>
+  		</div>
+	</nav>
+  <!-- Navbar ends -->
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Sr. No</th>
+        <th scope="col">State</th>
+        <th scope="col">Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Punjab</td>
+        <td><a href="../licenses/punjab.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Tamil Nadu</td>
+        <td><a href="{{ url_for('static',filename='licenses/tamilnadu.pdf') }}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Maharashtra</td>
+        <td><a href="{{ url_for('static',filename='licenses/maharashtra.pdf') }}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Odisha</td>
+        <td><a href="{{ url_for('static',filename='licenses/odisha.pdf') }}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Madhya Pradesh</td>
+        <td><a href="{{ url_for('static',filename='licenses/madhyapradesh.pdf') }}" target="_blank"><i class="fa fa-file-pdf-o"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

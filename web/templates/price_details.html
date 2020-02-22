@@ -2,17 +2,12 @@
 <html>
 <head>
   <title>Price Details</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<style type="text/css">
-		
-	</style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <!-- Navbar starts -->
+	<!-- Navbar starts -->
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0288d1;">
   		<a class="navbar-brand" href="#">
   			<img src="{{ url_for('static',filename='images/farmer_logo.jpg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -29,61 +24,42 @@
     		</ul>
   		</div>
 	</nav>
-  <!-- Navbar ends -->
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col" rowspan="2">State</th>
-        <th scope="col" rowspan="2">Commodity</th>
-        <th scope="col" colspan="3"><center>Price in Rs.</center></th>
-        <th scope="col" rowspan="2">Unit</th>
-        <th scope="col" rowspan="2">Date</th>
-      </tr>
-      <tr>
-        <th>Min Price</th>
-        <th>Modal Price</th>
-        <th>Max Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-      </tr>
-    </tbody>
-  </table>
+  	<!-- Navbar ends -->
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped" id="crop_table">
+			<tr>
+				<th>State</th>
+				<th>District</th>
+				<th>Market</th>
+				<th>Commodity</th>
+				<th>Variety</th>
+				<th>Date</th>
+				<th>Minimum Price</th>
+				<th>Maximum Price</th>
+				<th>Modal Price</th>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
+
+<script>
+	$(document).ready(function(){
+		$.getJSON("{{ url_for('static',filename='crop_data/crop_data.json') }}", function(data){
+				var crop_data = '';
+				$.each(data, function(key, value){
+					crop_data += '<tr>';
+					crop_data += '<td>'+value.State+'</td>';
+					crop_data += '<td>'+value.District+'</td>';
+					crop_data += '<td>'+value.Market+'</td>';
+					crop_data += '<td>'+value.Commodity+'</td>';
+					crop_data += '<td>'+value.Variety+'</td>';
+					crop_data += '<td>'+value.Date+'</td>';
+					crop_data += '<td>'+value.MinPrice+'</td>';
+					crop_data += '<td>'+value.MaxPrice+'</td>';
+					crop_data += '<td>'+value.ModalPrice+'</td>';
+				});
+				$('#crop_table').append(crop_data);
+			});
+	});
+</script>

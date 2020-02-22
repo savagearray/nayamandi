@@ -1,0 +1,46 @@
+[
+  {
+    "State": "Karnataka",
+    "District": "Kolar",
+    "Market": "Chintamani",
+    "Commodity": "Rice",
+    "Variety": "Sona",
+    "Date": "20-02-20",
+    "MinPrice": 3700,
+    "MaxPrice": 5200,
+    "ModalPrice": 4000
+  },
+  {
+    "State": "Gujarat",
+    "District": "Junagarh",
+    "Market": "Visavadar",
+    "Commodity": "Wheat",
+    "Variety": "Lokwan Gujrat",
+    "Date": "20-02-20",
+    "MinPrice": 1825,
+    "MaxPrice": 2145,
+    "ModalPrice": 1985
+  },
+  {
+    "State": "Uttar Pradesh",
+    "District": "Balrampur",
+    "Market": "Utraula",
+    "Commodity": "Maize",
+    "Variety": "Deshi Red",
+    "Date": "20-02-20",
+    "MinPrice": 1800,
+    "MaxPrice": 1860,
+    "ModalPrice": 1850
+  },
+  {
+    "State": "Madhya Pradesh",
+    "District": "Jhabua",
+    "Market": "Jhabua",
+    "Commodity": "Cotton",
+    "Variety": "Desi",
+    "Date": "20-02-20",
+    "MinPrice": 4400,
+    "MaxPrice": 4400,
+    "ModalPrice": 4400
+  }
+]

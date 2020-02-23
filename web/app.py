@@ -18,6 +18,18 @@ def license():
 def price_details():
     return render_template('price_details.html')
 
+@app.route("/incentives")
+def incentives():
+    return render_template('incentives.html')
+
+@app.route("/ml_working")
+def ml_working():
+    return render_template('ml_working.html')
+
+@app.route("/future_prediction")
+def future_prediction():
+    return render_template('future_prediction.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 #FLASK_APP=filename.py FLASK_ENV=development flask run –port 8080

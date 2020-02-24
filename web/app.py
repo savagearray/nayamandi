@@ -30,6 +30,10 @@ def ml_working():
 def future_prediction():
     return render_template('future_prediction.html')
 
+@app.route("/registration")
+def registration():
+    return render_template('registration.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 #FLASK_APP=filename.py FLASK_ENV=development flask run –port 8080

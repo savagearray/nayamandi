@@ -46,6 +46,16 @@ def contact_us():
 def features():
     return render_template('features.html')
 
+@app.route("/login_consumers")
+def login_consumers():
+    return render_template('login_consumers.html')
+
+@app.route("/login_sellers")
+def login_sellers():
+    return render_template('login_sellers.html')
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 #FLASK_APP=filename.py FLASK_ENV=development flask run –port 8080

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\bmah0\Documents\GitHub\nayamandi\web\Flask_env"
+VIRTUAL_ENV="C:\Users\Sohan\Desktop\nayamandi\web\Flask_env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

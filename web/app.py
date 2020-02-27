@@ -34,6 +34,18 @@ def future_prediction():
 def registration():
     return render_template('registration.html')
 
+@app.route("/about_us")
+def about_us():
+    return render_template('about_us.html')
+
+@app.route("/contact_us")
+def contact_us():
+    return render_template('contact_us.html')
+
+@app.route("/features")
+def features():
+    return render_template('features.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 #FLASK_APP=filename.py FLASK_ENV=development flask run –port 8080

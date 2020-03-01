@@ -1,6 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask, render_template , flash, redirect, url_for, session
 
-app = Flask(__name__)
+app = flask.Flask(__name__ , 
+            static_url_path='', 
+            static_folder='static')
+
+app.config["DEBUG"] = True
+app.secret_key = 'super secret key'
+
+
+@app.route("/test")
+def index():
+    return "Server is Up & Running"
 
 @app.route("/")
 def index():
@@ -56,6 +66,9 @@ def login_sellers():
 
 
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
+
+
 #FLASK_APP=filename.py FLASK_ENV=development flask run –port 8080
